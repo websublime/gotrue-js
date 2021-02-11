@@ -44,6 +44,17 @@ export default class GoTrue {
     return this._request('/settings');
   }
 
+  identity() {
+    return this._request('/identity');
+  }
+
+  template(type, subject, url, baseUrl, templateUrl) {
+    return this._request('/template', {
+      method: 'POST',
+      body: JSON.stringify({ type, subject, url, baseUrl, templateUrl }),
+    });
+  }
+
   signup(email, password, data) {
     return this._request('/signup', {
       method: 'POST',

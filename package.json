@@ -1,9 +1,9 @@
 {
-  "name": "gotrue-js",
+  "name": "@websublime/gotrue-js",
   "description": "GoTrue API client for JavaScript",
-  "version": "0.9.29",
+  "version": "0.10.0",
   "author": "Mathias Biilmann Christensen",
-  "bugs": "https://github.com/netlify/micro-api-client-lib/issues",
+  "bugs": "https://github.com/websublime/gotrue-js/issues",
   "dependencies": {
     "micro-api-client": "^3.2.1"
   },
@@ -37,7 +37,7 @@
   "types": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/netlify/gotrue-js.git"
+    "url": "git+https://github.com/websublime/gotrue-js.git"
   },
   "scripts": {
     "babelify": "browserify src/index.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-object-rest-spread ] ] | uglifyjs > browser/gotrue.js",

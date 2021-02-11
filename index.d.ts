@@ -14,6 +14,8 @@ export interface GoTrueInit {
     setCookie?: boolean;
 }
 
+export type EmailTypes = 'INVITE'|'CONFIRMATION'|'RECOVERY'|'EMAIL';
+
 declare class GoTrue {
     constructor(init?: GoTrueInit);
 
@@ -27,8 +29,28 @@ declare class GoTrue {
     recover(token: string, remember?: boolean): Promise<User>;
     requestPasswordRecovery(email: string): Promise<void>;
     settings(): Promise<Settings>;
+    identity(): Promise<Identity>;
     signup(email: string, password: string, data?: any): Promise<User>;
     verify(type: string, token: string, remember?: boolean): Promise<User>;
+    template(type: EmailTypes, subject: string, url: string, baseUrl: string, templateUrl: string): Promise<Template>;
+}
+
+export interface Template {
+  id: string;
+  aud: string;
+  type: EmailTypes;
+  subject: string;
+  url: string;
+  baseUrl: string;
+  templateUrl: string;
+}
+
+export interface Identity {
+  token: string;
+  id: string;
+  secretKey: string;
+  accessKey: string;
+  userId: string;
 }
 
 export interface Settings {
