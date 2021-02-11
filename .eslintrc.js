@@ -13,7 +13,7 @@ module.exports = {
   rules: {
     // eslint-plugin-ava needs to know where test files are located
     'ava/no-ignored-test-files': [2, { files: ['tests/**/*.js'] }],
-
+    'max-params': ['error', 5],
     // TODO: enable these rules
     'consistent-this': 0,
     'func-style': 0,
